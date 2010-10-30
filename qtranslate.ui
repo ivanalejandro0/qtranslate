@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qtranslator</class>
+ <widget class="QMainWindow" name="qtranslator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>572</width>
+    <height>346</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QTranslator</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelSource">
+      <property name="text">
+       <string>Texto a traducir</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="labelDestination">
+      <property name="text">
+       <string>Texto traducido</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTextEdit" name="textSource"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTextEdit" name="textDestination"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QComboBox" name="cbSource">
+      <item>
+       <property name="text">
+        <string>??</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>es</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>en</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>fr</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QComboBox" name="cbDestination">
+      <item>
+       <property name="text">
+        <string>es</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>en</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>fr</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QPushButton" name="pbTranslate">
+      <property name="text">
+       <string>&amp;Traducir</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>572</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionTraducir"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionTraducir">
+   <property name="text">
+    <string>Traducir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
