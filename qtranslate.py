@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Copyright 2010 Ivan Alejandro <ivanalejandro0@yahoo.com.ar>
+#
 # This file is part of QTranslate.
 #
 # QTranslate is free software: you can redistribute it and/or modify
@@ -30,13 +32,17 @@ except ImportError:
 from googletranslate import GoogleTranslate
 
 class QTranslate(QtGui.QMainWindow):
+    about = """
+        <center><strong>QTranslator</strong></center>
+        Es un programa que permite realizar traducciones de palabras y
+        texto gracias a la API de Google Translate.<br />
+        """
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
 
         uifile = os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "qtranslate.ui")
 
-        uifile = 'qtranslate.ui'
         uic.loadUi(uifile, self)
 
         self.ui = self
@@ -53,25 +59,38 @@ class QTranslate(QtGui.QMainWindow):
         if text != "":
             self.textDestination.setPlainText( self.googletrans.translate(text, lsrc,  ldest) )
 
+
     def on_cbSource_currentIndexChanged(self, txt):
         if txt == '??':
             txt = ""
         self.langFrom = str(txt)
 
+
     def on_cbDestination_currentIndexChanged(self, txt):
         self.langTo = str(txt)
 
-    def on_actionTraducir_triggered(self, b=None):
-        if b == None: return
 
+    @QtCore.pyqtSlot()
+    def on_actionTraducir_triggered(self, b=None):
         self.translate()
 
+
+    @QtCore.pyqtSlot()
     def on_actionSalir_triggered(self, b=None):
-        if b == None: return
         sys.exit(0)
+
 
     def on_pbTranslate_clicked(self):
         self.translate()
+
+
+    @QtCore.pyqtSlot()
+    def on_actionAbout_triggered(self, b=None):
+        msgBox = QtGui.QMessageBox()
+        msgBox.setText(self.about)
+        msgBox.exec_()
+
+
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

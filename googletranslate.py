@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Copyright 2010 Ivan Alejandro <ivanalejandro0@yahoo.com.ar>
+#
 # This file is part of QTranslate.
 #
 # QTranslate is free software: you can redistribute it and/or modify
@@ -36,6 +38,7 @@ class GoogleTranslate(object):
         self.url = "http://ajax.googleapis.com/ajax/services/language/translate"
         self.params = {}
         self.params['v'] = '1.0'
+
 
     def translate(self,  texto, source,  dest):
         self.params['langpair'] = "%s|%s" % (source, dest)

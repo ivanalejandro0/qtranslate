@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# Copyright 2010 Ivan Alejandro <ivanalejandro0@yahoo.com.ar>
+#
 # This file is part of QTranslate.
 #
 # QTranslate is free software: you can redistribute it and/or modify
