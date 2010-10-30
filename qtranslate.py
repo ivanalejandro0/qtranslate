@@ -53,6 +53,7 @@ class QTranslate(QtGui.QMainWindow):
 
 
     def translate(self):
+        print "Translate"
         lsrc = self.langFrom
         ldest = self.langTo
         text = str( self.textSource.toPlainText() )
@@ -71,21 +72,22 @@ class QTranslate(QtGui.QMainWindow):
 
 
     @QtCore.pyqtSlot()
-    def on_actionTraducir_triggered(self, b=None):
+    def on_actionTraducir_triggered(self):
         self.translate()
 
 
     @QtCore.pyqtSlot()
-    def on_actionSalir_triggered(self, b=None):
+    def on_actionSalir_triggered(self):
         sys.exit(0)
 
 
+    @QtCore.pyqtSlot()
     def on_pbTranslate_clicked(self):
         self.translate()
 
 
     @QtCore.pyqtSlot()
-    def on_actionAbout_triggered(self, b=None):
+    def on_actionAbout_triggered(self):
         msgBox = QtGui.QMessageBox()
         msgBox.setText(self.about)
         msgBox.exec_()
